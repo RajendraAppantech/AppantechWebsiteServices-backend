@@ -1,0 +1,40 @@
+2025-05-23 11:20:13,964 INFO [background-preinit] org.hibernate.validator.internal.util.Version [21] HV000001: Hibernate Validator 8.0.2.Final
+2025-05-23 11:20:14,110 INFO [main] org.springframework.boot.StartupInfoLogger [53] Starting AppantechWebsiteServicesApplication using Java 17.0.2 with PID 30208 (D:\Workspaces\spring\privateWorkspace\AppantechWebsiteServices\target\classes started by mayur.more in D:\Workspaces\spring\privateWorkspace\AppantechWebsiteServices)
+2025-05-23 11:20:14,113 INFO [main] org.springframework.boot.SpringApplication [652] No active profile set, falling back to 1 default profile: "default"
+2025-05-23 11:20:15,304 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [143] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-23 11:20:15,476 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [211] Finished Spring Data repository scanning in 149 ms. Found 10 JPA repository interfaces.
+2025-05-23 11:20:16,958 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [111] Tomcat initialized with port 2323 (http)
+2025-05-23 11:20:16,977 INFO [main] org.apache.juli.logging.DirectJDKLog [168] Initializing ProtocolHandler ["http-nio-2323"]
+2025-05-23 11:20:16,982 INFO [main] org.apache.juli.logging.DirectJDKLog [168] Starting service [Tomcat]
+2025-05-23 11:20:16,983 INFO [main] org.apache.juli.logging.DirectJDKLog [168] Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-23 11:20:17,122 INFO [main] org.apache.juli.logging.DirectJDKLog [168] Initializing Spring embedded WebApplicationContext
+2025-05-23 11:20:17,123 INFO [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [301] Root WebApplicationContext: initialization completed in 2862 ms
+2025-05-23 11:20:17,224 INFO [main] com.web.RequestFilter [29] *********************************** Filter initialized *******************************************
+2025-05-23 11:20:17,438 INFO [main] com.zaxxer.hikari.HikariDataSource [109] HikariPool - Starting...
+2025-05-23 11:20:20,498 INFO [main] com.zaxxer.hikari.pool.HikariPool [554] HikariPool - Added connection org.postgresql.jdbc.PgConnection@d25e878
+2025-05-23 11:20:20,503 INFO [main] com.zaxxer.hikari.HikariDataSource [122] HikariPool - Start completed.
+2025-05-23 11:20:20,604 INFO [main] org.hibernate.jpa.internal.util.LogHelper [31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-23 11:20:20,811 INFO [main] org.hibernate.Version [44] HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-23 11:20:20,980 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator [50] HHH000026: Second-level cache disabled
+2025-05-23 11:20:21,149 INFO [main] org.hibernate.envers.boot.internal.EnversServiceImpl [76] Envers integration enabled? : true
+2025-05-23 11:20:21,604 INFO [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [87] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-23 11:20:22,096 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl [153] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-23 11:20:22,375 INFO [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator [157] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-23 11:20:22,956 INFO [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator [322] Adding properties for entity: com.web.entity.UserMaster
+2025-05-23 11:20:22,959 INFO [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator [322] Adding properties for entity: com.web.entity.VendorMaster
+2025-05-23 11:20:22,960 INFO [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator [322] Adding properties for entity: com.web.entity.UserMenu
+2025-05-23 11:20:23,058 WARN [main] org.hibernate.id.enhanced.OptimizerFactory [52] HHH000321: Unable to interpret specified optimizer [true], falling back to noop
+2025-05-23 11:20:24,765 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [59] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-23 11:20:24,770 INFO [main] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [447] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-23 11:20:25,473 INFO [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory [49] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-23 11:20:27,123 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [258] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-23 11:20:27,778 INFO [main] org.apache.juli.logging.DirectJDKLog [168] Starting ProtocolHandler ["http-nio-2323"]
+2025-05-23 11:20:27,818 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [243] Tomcat started on port 2323 (http) with context path '/'
+2025-05-23 11:20:27,838 INFO [main] org.springframework.boot.StartupInfoLogger [59] Started AppantechWebsiteServicesApplication in 14.391 seconds (process running for 15.967)

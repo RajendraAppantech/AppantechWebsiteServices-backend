@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AppanTech Services - SMS On-boarding</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #cfd3d7;
+      }
+ 
+      .container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 15px;
+        border: 1px solid #00B6CE;
+        background-color: #ffffff;
+        box-sizing: border-box;
+      }
+ 
+      .email-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+ 
+      .email-container {
+        width: 100%;
+        max-width: 800px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        box-sizing: border-box;
+      }
+ 
+      .header {
+        width: 100%;
+        height: auto;
+      }
+ 
+      .email-body {
+        padding-top: 10px;
+      }
+ 
+      .email-body p {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.6;
+      }
+ 
+      .email-body strong {
+        font-weight: bold;
+      }
+ 
+      .signature {
+        margin-top: 20px;
+      }
+ 
+      .signature p {
+        margin: 4px 0;
+      }
+      img.banner {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body class="body_div">
+    <div class="container">
+      <img src="appantechLogo.jpg" alt="AppanTech Logo" class="banner" />
+
+        <p><strong>Dear Team,</strong></p>
+
+        <p>
+            A new <span style="color: #00AEEF;"><strong>SMS</strong></span> enquiry has been received through the AppanTech Website.
+            Please find the details below:
+        </p>
+
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td><strong>Company Name:</strong></td>
+                <td>{{companyName}}</td>
+                <td><strong>Address 1:</strong></td>
+                <td>{{address1}}</td>
+            </tr>
+            <tr>
+                <td><strong>SPOC No:</strong></td>
+                <td>{{spocNo}}</td>
+                <td><strong>Address 2:</strong></td>
+                <td>{{address2}}</td>
+            </tr>
+            <tr>
+                <td><strong>SPOC Name:</strong></td>
+                <td>{{spocName}}</td>
+                <td><strong>Pincode:</strong></td>
+                <td>{{pincode}}</td>
+            </tr>
+            <tr>
+                <td><strong>SPOC Mail id:</strong></td>
+                <td>{{spocEmail}}</td>
+                <td><strong>City:</strong></td>
+                <td>{{city}}</td>
+            </tr>
+            <tr>
+                <td><strong>Entity Id:</strong></td>
+                <td>{{entityId}}</td>
+                <td><strong>State:</strong></td>
+                <td>{{state}}</td>
+            </tr>
+            <tr>
+                <td><strong>Sender Id:</strong></td>
+                <td>{{senderId}}</td>
+                <td><strong>Country:</strong></td>
+                <td>{{country}}</td>
+            </tr>
+            <tr>
+                <td><strong>Template Id:</strong></td>
+                <td>{{templateId}}</td>
+                <td><strong>Template:</strong></td>
+                <td>{{template}}</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <p>Please reach out to the customer at the earliest.</p>
+
+        <p>Regards,</p>
+        <p><strong>AppanTech Website Notification System</strong></p>
+    </div>
+</body>
+</html>
