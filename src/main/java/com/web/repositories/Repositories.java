@@ -87,6 +87,9 @@ public class Repositories {
 				@Param("sendorId") String sendorId);
 
 		List<TemplateMaster> findByCustomerCodeAndSendorId(String customerCode, String sendorId);
+
+		com.google.common.base.Optional<TemplateMaster> findFirstByEntityIdAndStatusIgnoreCase(String entityId,
+				String string);
 	}
 
 	public interface VendorMasterRepository extends JpaRepository<VendorMaster, String> {

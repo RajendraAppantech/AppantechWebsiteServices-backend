@@ -2,11 +2,13 @@ package com.web.services;
 
 import java.math.BigDecimal;
 import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
 import com.web.entity.BuySmsTransaction;
 import com.web.entity.CustomerDetails;
 import com.web.entity.MasterSendorid;
@@ -79,7 +81,10 @@ public class OnboardCustomerService {
 	private SmsMasterRepository smsMasterRepository;
 	
 	@Autowired
-	private SendEmailToSupportService sendEmailToSupportService;
+	private CompanyEmailLogService companyEmailLogService;
+
+	@Autowired
+	private EmailLogService emailLogService;
 	
 	private static final Logger Logger = LoggerFactory.getLogger(OnboardCustomerService.class);
 
@@ -202,13 +207,13 @@ public class OnboardCustomerService {
 			masterRepository.save(ums);
 
 			String txnId = userCode + myUtils.getTxnId();
-			/*SmsMaster sms = new SmsMaster();
+			SmsMaster sms = new SmsMaster();
 			sms.setMobileNo(request.getSpocContactNo());
 			sms.setUsername(userCode);
 			sms.setOtpDate(new Date());
-			//sms.setSms("Dear User, Your login account has been created successfully for the SMS Portal, Please note your username is <USERNAME> and password is <PASSWORD> - Appan Dukan"
-			//				.replace("<USERNAME>", custId).replace("<PASSWORD>", newPass));
-			sms.setSms("Dear User, Your OTP is 3345. It is valid for a limited time. Please do not share this OTP with anyone. Regards, Appan Mobility Team");
+			sms.setSms("Dear User, Your login account has been created successfully for the SMS Portal, Please note your username is <USERNAME> and password is <PASSWORD> - Appan Dukan"
+							.replace("<USERNAME>", custId).replace("<PASSWORD>", newPass));
+			//sms.setSms("Dear User, Your OTP is 3345. It is valid for a limited time. Please do not share this OTP with anyone. Regards, Appan Mobility Team");
 			sms.setStatus("P");
 			sms.setSmsKey(this.smsKey);
 			sms.setSmsFrom(this.smsFrom);
@@ -216,7 +221,7 @@ public class OnboardCustomerService {
 			sms.setEntityId("1701174410243974966");
 			sms.setSmsResponse("SMS send pending for proccess");
 			sms.setSendTxnId(txnId);
-			smsMasterRepository.save(sms);*/
+			smsMasterRepository.save(sms);
 
 			// TOP UP SMS Process
 			response = topupSMStocustomerWallet(request, topupAmount, custId);
@@ -224,8 +229,19 @@ public class OnboardCustomerService {
 				return response;
 			}
 			
-			//Send Email to support team
-			sendEmailToSupportService.saveSupportEmailLog(request);
+			// Call mail services
+			Logger.info("Sending company email...");
+			CommonResponse companyEmailResponse = companyEmailLogService.sendMailToCompany(ums);
+
+			if (companyEmailResponse.isStatus()) {
+				Logger.info("Company email sent successfully. Proceeding to send customer email...");
+
+				Logger.info("Sending customer email...");
+				emailLogService.sendMailToCustomer(ums, ums.getUserId(), newPass);
+				Logger.info("Customer email sent.");
+			} else {
+				Logger.error("Failed to send company email. Skipping customer email. Reason: {}", companyEmailResponse.getMessage());
+			}
 
 			response.setStatus(true);
 			response.setMessage(
