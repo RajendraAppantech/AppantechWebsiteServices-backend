@@ -295,7 +295,7 @@ public class OnboardCustomerService {
 			txn.setVendorId(venMaster.getVendorId());
 			txn.setVendorName(venMaster.getVendorName().toUpperCase());
 			txn.setTransactionDate(new Date());
-			txn.setTxnType("TOPUP");
+			txn.setTxnType("TOPUP_SMS");
 			txn.setAmount(topupAmount);
 			txn.setRate(new BigDecimal(TOPUP_SMS_RATE));
 			txn.setSms(amountInSmsCount);
@@ -319,7 +319,6 @@ public class OnboardCustomerService {
 
 			return response;
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			Logger.error("Exception in onboardCustomer: ", e);
 			response.setStatus(false);
